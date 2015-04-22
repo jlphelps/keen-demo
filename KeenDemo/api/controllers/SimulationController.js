@@ -45,10 +45,10 @@ module.exports = {
                             }
                         ],
                     }, function(err, res){
-                        if (err) return parallel_done(err);
-
-                        parallel_done();
+                        if (err) console.log(err);
                     });
+                    
+                    parallel_done();
                 },
                 function(parallel_done) { // register their pageview and name & email focus/blurs
                     if (Random.integer(1, 10)(engine) <= buy_success_rate + 4) return parallel_done(); // eh
@@ -61,9 +61,11 @@ module.exports = {
                             blur_email: [object_to_send],
                         },
                         function(err, res){
-                            if (err) return parallel_done(err);
-                            parallel_done();
+                            if (err) console.log(err);
+
                         });
+
+                    parallel_done();
                 },
                 function(parallel_done) { // did they buy?  if so, register widget focus/blur and purchase
                     if (Random.integer(1, 10)(engine) <= buy_success_rate) return parallel_done();
@@ -75,10 +77,10 @@ module.exports = {
                             purchases: [object_to_send]
                         },
                         function(err, res) {
-                            if (err) return parallel_done(err);
-
-                            parallel_done();
+                            if (err) console.log(err);
                         });
+
+                        parallel_done();
                 },
             ], function(err){ // done with this batch
                 next(err);
