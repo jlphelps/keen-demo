@@ -1,0 +1,16 @@
+.circle-number {
+    background-position:0 -42px;
+    font-size: 4vw;
+    no-repeat;
+    position: absolute;
+    left: 0;
+    top:0;
+}
+
+.fa-5 {
+    font-size: 5vw;
+}
+
+.tutorial_image {
+    width: 100%;
+}
